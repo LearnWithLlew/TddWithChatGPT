@@ -53,7 +53,7 @@ Please write a python implementation of the Line class
 ### Desired API
 
 ```python
-line = Line.of("one ").removed("too ").added("two ").and("three.")
+line = Line.compare("one ").removed("too ").added("two "). and ("three.")
 ```
 
 
@@ -66,9 +66,8 @@ changes that might occur in a line.
 
 ## Prompt 3 - TDD
 
-
 ```python
-line = Line.of("one ").removed("too ").added("two ").and("three.")
+line = Line.compare("one ").removed("too ").added("two "). and ("three.")
 assert line.get_parts()[0].is_same() == True
 assert line.get_parts()[1].is_removed() == True
 assert line.get_parts()[2].is_added() == True

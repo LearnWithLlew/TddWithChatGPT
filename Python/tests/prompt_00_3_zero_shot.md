@@ -13,7 +13,7 @@ Please write a python implementation of the Line class
 ### Desired API
 
 ```python
-line = Line.of("one ").removed("too ").added("two ").and("three.")
+line = Line.compare("one ").removed("too ").added("two "). and ("three.")
 ```
 
 
