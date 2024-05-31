@@ -1,48 +1,5 @@
-class Part:
-    def __init__(self, text, status):
-        self.text = text
-        self.status = status
+from tests.line import Line
 
-    def is_unchanged(self):
-        return self.status == "unchanged"
-
-    def is_removed(self):
-        return self.status == "removed"
-
-    def is_added(self):
-        return self.status == "added"
-
-    def __str__(self):
-        return f"`{self.text}`[{self.status}]"
-
-
-class Line:
-    def __init__(self):
-        self.parts = []
-
-    @staticmethod
-    def keep(text):
-        line = Line()
-        line.parts.append(Part(text, "unchanged"))
-        return line
-
-    def remove(self, text):
-        self.parts.append(Part(text, "removed"))
-        return self
-
-    def add(self, text):
-        self.parts.append(Part(text, "added"))
-        return self
-
-    def keep_part(self, text):
-        self.parts.append(Part(text, "unchanged"))
-        return self
-
-    def get_parts(self):
-        return self.parts
-
-    def __str__(self):
-        return ", ".join(str(part) for part in self.parts)
 
 def test_simple_replace():
     # Create a line of "one " that has a "too " removed and a "two " added and ends with "three."
