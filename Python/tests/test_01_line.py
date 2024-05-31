@@ -12,6 +12,10 @@ class Part:
     def is_added(self):
         return self.status == "added"
 
+    def __str__(self):
+        return f"`{self.text}`[{self.status}]"
+
+
 class Line:
     def __init__(self):
         self.parts = []
@@ -37,6 +41,9 @@ class Line:
     def get_parts(self):
         return self.parts
 
+    def __str__(self):
+        return ", ".join(str(part) for part in self.parts)
+
 def test_simple_replace():
     # Create a line of "one " that has a "too " removed and a "two " added and ends with "three."
     line = Line.keep("one ").remove("too ").add("two ").keep_part("three.")
@@ -52,5 +59,6 @@ def test_simple_replace():
 
 def test_to_string():
     # Create a line of "one " that has a "too " removed and a "two " added and ends with "three."
+    line = Line.keep("one ").remove("too ").add("two ").keep_part("three.")
     # Check that the line is equal to "`one `[unchanged], `too `[removed], `two `[added], `three.`[unchanged]"
-    pass
+    assert str(line) == "`one `[unchanged], `too `[removed], `two `[added], `three.`[unchanged]"
