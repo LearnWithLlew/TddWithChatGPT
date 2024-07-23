@@ -10,6 +10,31 @@ markdown = MarkdownRender.refactoringsOf(lines)
 
 Which would produce:
 ```markdown
+<pre style="color: gray">
+Start
+One <b style="color: red">too </b>three.
+End
+</pre> 
+# ⇓
+<pre style="color: gray">
+Start
+One <s style="color: red">too </s><b style="color: green">two </b>three.
+End
+</pre>
 
 ```
 
+
+
+<pre style="color: gray">
+Start
+<b style="color: red">One too three.</b>
+End
+</pre>
+# ⇓
+<pre style="color: gray">
+Start
+<s style="color: red">One too three.</s>
+<b style="color: green">One two three.</b>
+End
+</pre>

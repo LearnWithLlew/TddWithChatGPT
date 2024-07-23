@@ -2,7 +2,7 @@
 Start
 One <b style="color: red">too </b>three.
 End
-</pre>
+</pre> 
 # ⇓
 <pre style="color: gray">
 Start
