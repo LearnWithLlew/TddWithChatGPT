@@ -19,3 +19,6 @@ class Line:
     def add(self, text):
         self.parts.append(Part(text, 'added'))
         return self
+
+    def __str__(self):
+        return ', '.join([str(part) for part in self.parts])

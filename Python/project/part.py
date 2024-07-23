@@ -11,3 +11,5 @@ class Part:
 
     def is_added(self):
         return self.change_type == 'added'
+    def __str__(self):
+        return f"`{self.text}`[{self.change_type}]"
